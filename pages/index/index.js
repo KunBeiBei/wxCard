@@ -76,15 +76,10 @@ Page({
           } else if (ress.success === 2) { 
             //分享进游戏
             wx.showToast({
-              title: '次数不足请分享',
-              icon: 'loading',
-              image: '../images/fff.png',
+              title: '次数不足，请分享到群获取更多活动机会！',
+              icon: 'none',
               duration: 3000
-            });
-            that.setData({
-              ts: '请点击右上角进行转发分享'
-            }) 
-            
+            })
           } else if (ress.success === 1){
             //填表进游戏
             wx.navigateTo({
@@ -94,8 +89,7 @@ Page({
             //不能进游戏
             wx.showToast({
               title: '明天继续',
-              icon: 'loading',
-              image: '../images/fff.png',
+              icon: 'none',
               duration: 3000
             });
           }
