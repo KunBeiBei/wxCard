@@ -3,7 +3,7 @@
 var app = getApp();
 Page({
   data: {
-    motto: '开始游戏',
+    motto: '开始活动',
     userInfo: {},
     welcome: '你好',
     ts: ''
