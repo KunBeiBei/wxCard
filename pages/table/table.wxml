@@ -6,12 +6,6 @@
                 <input type="text" class="input-text" name="name" placeholder="请输入姓名" />
             </view>    
         </view>
-        <!-- <view class="section">
-            <view class="section__title">学校:</view>
-            <view class='form-group'>
-                <input type="text" class="input-text" name="school" placeholder="请输入学校" />
-            </view>    
-        </view> -->
         <view class="section">
           <view class="section__title">学校:</view>
           <view class='form-group'>
@@ -35,9 +29,9 @@
             </view>    
         </view>
         
-        <view class="section btn-area">
-            <button formType="submit">提交</button>
-            <button formType="reset">清空</button>
+        <view class="btn-area">
+            <button formType="submit" class='bu'>提交</button>
+            <button formType="reset" class='bu'>清空</button>
         </view>
     </form>
 
