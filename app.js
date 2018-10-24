@@ -93,8 +93,7 @@ App({
     //弹框
     wx.showToast({
       title: '不是群发没有次数',
-      icon: 'loading',
-      image: '../images/fff.png',
+      icon: 'none',
       duration: 3000
     });
   },
@@ -121,8 +120,7 @@ App({
                   //resolve(data.data);
                   wx.showToast({
                     title: data.data.mes,
-                    icon: 'loading',
-                    image: '../images/fff.png',
+                    icon: 'none',
                     duration: 3000
                   });
                 } 
@@ -143,8 +141,7 @@ App({
     //弹框
     wx.showToast({
       title: '分享失败',
-      icon: 'loading',
-      image: '../images/fff.png',
+      icon: 'none',
       duration: 3000
     });
   }

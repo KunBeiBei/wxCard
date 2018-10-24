@@ -11,7 +11,7 @@
     
     
   </view>
-  <view class="usermotto"  >
+  <view class="usermotto" style='margin-bottom:260rpx;' >
     <!-- 继续游戏 -->
     <button class="user-motto" bindtap="startGame">{{button_txt_1}}</button>      
     <!-- 查看奖励 -->

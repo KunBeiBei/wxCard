@@ -43,6 +43,7 @@ Page({
       title: '自定义分享标题',
       desc: '自定义分享描述',
       path: '/pages/index/index',
+      imageUrl: '/pages/images/zf.jpg',
       success(e) {
         //判断是否群发
         if (e.shareTickets == undefined) {

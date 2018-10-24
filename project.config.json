@@ -36,13 +36,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "红包",
 					"pathName": "pages/redPackets/index",
 					"query": "red=50"
+				},
+				{
+					"id": -1,
+					"name": "2",
+					"pathName": "pages/table/table"
 				}
 			]
 		}

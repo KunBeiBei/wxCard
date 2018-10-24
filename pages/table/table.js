@@ -30,8 +30,7 @@ Page({
       //
       wx.showToast({
         title: '信息有误',
-        icon: 'loading',
-        image: '../images/fff.png',
+        icon: 'none',
         duration: 3000
       });
       
@@ -58,8 +57,7 @@ Page({
                 });
                 wx.showToast({
                   title: '游戏次数+1',
-                  icon: 'loading',
-                  image: '../images/fff.png',
+                  icon: 'none',
                   duration: 3000
                 });
                 wx.redirectTo({
@@ -109,8 +107,7 @@ Page({
 
     wx.showToast({
       title: '请填表进行操作',
-      icon: 'loading',
-      image: '../images/fff.png',
+      icon: 'none',
       duration: 3000
     });
   },

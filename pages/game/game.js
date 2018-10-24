@@ -102,9 +102,7 @@ Page({
         // 1.2.1.2 检查是否所有牌都已经翻过来,都已翻过来提示游戏结束
         if (checked == size) { // 所有牌都配对成功了!
           clearInterval(this.data.timer); // 暂停计时
-          this.setData({
-            display: "block"
-          })
+          
           this.data.timer = '';
           if (data.useTimes >= 90){
             jf = 0;
@@ -115,13 +113,15 @@ Page({
               } else {
                 wx.showToast({
                   title: res.mes,
-                  icon: 'loading',
-                  image: '../images/fff.png',
+                  icon: 'none',
                   duration: 3000
                 });
               }
             }); // 保存成绩
           }
+          this.setData({
+            display: "block"
+          });
         }
       } else {  // 1.2.2 两张牌不同, 修改两张牌的state为 0
         data.cards[firstX][firstY].state = 0;

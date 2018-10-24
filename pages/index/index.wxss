@@ -81,7 +81,7 @@ page{
     top: 0;
     bottom: 0;
     margin:auto;
-    height: 600rpx;
+    height: 700rpx;
     background: #fff;
     border-radius: 20rpx;
     display: flex;
@@ -103,6 +103,7 @@ page{
     font-weight: bold;
     border-radius: 30rpx;
     width: 200rpx;
+    color:#7e7d7d;
 }
 .h1{
   display: block;
