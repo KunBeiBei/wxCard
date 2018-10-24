@@ -62,7 +62,6 @@ Page({
   },
   startGame: function(e){
     var that = this;
-    // console.log("游戏页面跳转判断用户是否登录"); 
     if (e.detail.userInfo){
     //存放用户信息
     wx.setStorageSync('userInfo', e.detail.rawData);
@@ -76,7 +75,7 @@ Page({
           } else if (ress.success === 2) { 
             //分享进游戏
             wx.showToast({
-              title: '次数不足，请分享到群获取更多活动机会！',
+              title: '次数不足，请分享到群活得活动次数！',
               icon: 'none',
               duration: 3000
             })
@@ -88,7 +87,7 @@ Page({
           }else{
             //不能进游戏
             wx.showToast({
-              title: '明天继续',
+              title: '今天已超出活动机会，请明天再接再厉！',
               icon: 'none',
               duration: 3000
             });
