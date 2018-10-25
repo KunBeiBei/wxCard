@@ -4,9 +4,9 @@
 	line-height: 80rpx;
 }
 .swiper-tab-list{
-  font-size: 30rpx;
+  font-size: 33rpx;
   display: inline-block;
-	width: 33.33%;
+	width: 48%;
 	color: #777777;
   
 }
@@ -17,7 +17,8 @@
   display: block; 
   height: 100%; 
   width: 100%; 
-  overflow: hidden; 
+  overflow: hidden;
+  padding-top: 10rpx; 
 }
 .swiper-box view{
 	text-align: center;
