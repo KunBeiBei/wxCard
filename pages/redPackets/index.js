@@ -42,7 +42,7 @@ Page({
     return {
       title: '自定义分享标题',
       desc: '自定义分享描述',
-      path: 'pages/share/share?openid=' + wx.getStorageSync('openId'),
+      path: 'pages/share/share?openid=' + wx.getStorageSync('openid'),
       imageUrl: '/pages/images/zf.jpg'
       // success(e) {
       //   //判断是否群发
