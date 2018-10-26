@@ -1,13 +1,13 @@
 <view id="adduser">
     <form bindsubmit="formSubmit" bindreset="formReset">
          <view class="section">
-            <view class="section__title">姓名:</view>
+            <view class="section__title">姓名</view>
             <view class='form-group'>
                 <input type="text" class="input-text" name="name" placeholder="请输入姓名" />
             </view>    
         </view>
         <view class="section">
-          <view class="section__title">学校:</view>
+          <view class="section__title">学校</view>
           <view class='form-group'>
           <picker name="school" bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}">
             <view class="picker">{{array[index]}}</view>
@@ -17,18 +17,23 @@
 
 
         <view class="section">
-            <view class="section__title">专业:</view>
+            <view class="section__title">专业</view>
             <view class='form-group'>
                 <input type="text" class="input-text" name="profession" placeholder="请输入专业" />
             </view>    
         </view>
         <view class="section">
-            <view class="section__title">手机号:</view>
+            <view class="section__title">手机号</view>
             <view class='form-group'>
                 <input type="text" class="input-text" name="phone" placeholder="请输入手机号" />
             </view>    
         </view>
-        
+        <view class="section">
+            <view class="section__title aa">已向公司提交简历</view>
+            <view class='form-group bb'>
+                <switch bindchange="switch1Change" class='swi' name="issend"/>
+            </view>    
+        </view>
         <view class="btn-area">
             <button formType="submit" class='bu'>提交</button>
             <button formType="reset" class='bu'>清空</button>

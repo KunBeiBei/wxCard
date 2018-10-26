@@ -1,12 +1,14 @@
 //index.js
 //获取应用实例
 var app = getApp();
+var sto;
 Page({
   data: {
     motto: '开始活动',
     userInfo: {},
     welcome: '你好',
-    ts: ''
+    ts: '',
+    adverShow: true
   },
 
   cs: function () {
@@ -67,11 +69,30 @@ Page({
     wx.setStorageSync('userInfo', e.detail.rawData);
     this.setUserImage();
         that.getGameNum().then(function (ress) {
-          if (ress.success === 3) { 
-            //直接进入游戏
-            wx.navigateTo({
-              url: '../game/game'
-            });
+          if (ress.success === 3) {//一切正常时
+            //判断广告出现过多少次
+            var aNums = wx.getStorageSync('aNums')
+            if(aNums>=2){//大于2次直接进入
+              wx.navigateTo({
+                url: '../game/game'
+              });
+            }else{//小于两次显示广告才进入
+              ++aNums
+              wx.setStorageSync('aNums', aNums)
+              //新增出现广告后再开始游戏
+              that.setData({
+                adverShow: false
+              })
+              sto = setTimeout(function () {
+                that.setData({
+                  adverShow: true
+                }),
+                  //直接进入游戏
+                  wx.navigateTo({
+                    url: '../game/game'
+                  });
+              }, 2000)
+            }
           } else if (ress.success === 2) { 
             //分享进游戏
             wx.showToast({
@@ -159,8 +180,8 @@ Page({
   },
   onShareAppMessage: function (e) {
     return {
-      title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
-      desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
+      title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
+      desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
       imageUrl: '/pages/images/zf.jpg',
       path: 'pages/index/index',
       success(e) {
@@ -190,5 +211,16 @@ Page({
     this.setData({
       isRuleTrue: false
     })
+  },
+  //跳转到玩游戏
+  toPlayGame: function(){
+    clearTimeout(sto),
+    this.setData({
+      adverShow: true
+    }),
+    //直接进入游戏
+    wx.navigateTo({
+      url: '../game/game'
+    });
   }
 })

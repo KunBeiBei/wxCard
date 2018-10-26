@@ -22,9 +22,9 @@ Page({
   },
   //提交确认回调函数
   confirm_one: function (e) {
-    console.log(e);
     var that = this;
     var formData = this.data.e.detail.value;
+    console.log(formData);
     var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
     if (formData.name == "" || formData.school == "请选择" || formData.phone == "" || formData.profession == "" || formData.phone.length != 11 || !myreg.test(formData.phone)){
       //
@@ -60,7 +60,7 @@ Page({
                   icon: 'none',
                   duration: 3000
                 });
-                wx.redirectTo({
+                wx.reLaunch({
                   url: '../index/index'
                 })
               }else{
@@ -108,7 +108,7 @@ Page({
     wx.showToast({
       title: '请填表进行操作',
       icon: 'none',
-      duration: 3000
+      duration: 1000
     });
   },
   onReady: function () {
@@ -128,34 +128,13 @@ Page({
       modalHidden: false,
       e:e
     })
-    
-    
   },
   formReset: function () {
     console.log('form发生了reset事件');
     this.modalTap2();
   },
-  // onShareAppMessage: function () {
-  //   console.log('onShareAppMessage')
-  //   return {
-  //     title: '自定义分享标题',
-  //     desc: '自定义分享描述',
-  //     path: '/pages/index/index',
-  //     success(e) {
-  //       //判断是否群发
-  //       if (e.shareTickets == undefined) {
-  //         app.notMass();
-  //       } else {
-  //         app.success(app);
-  //       }
-  //     },
-  //     fail(e) {
-  //       app.fail();
-  //     },
-  //     complete() {
-  //       console.log("转发动作完成");
-  //     }
-  //   }
-  // }
+  switch1Change: function (e) {
+    console.log('switch1 发生 change 事件，携带值为', e.detail.value)
+  },
 })
 

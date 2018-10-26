@@ -52,3 +52,12 @@ page{
 .btn-area{
   margin-top: 40rpx;
 }
+.swi{
+  margin-top:20rpx;
+}
+.aa{
+  width: 50%;
+}
+.bb{
+  width: 50%;
+}

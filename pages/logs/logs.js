@@ -94,8 +94,8 @@ Page({
   },
   onShareAppMessage: function (e) {
     return {
-      title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
-      desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
+      title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
+      desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
       imageUrl: '/pages/images/zf.jpg',
       path: 'pages/index/index',
       success(e) {

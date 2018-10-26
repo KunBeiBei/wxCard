@@ -5,10 +5,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // var open = wx.getStorageSync('openId');
-    // if(open == undefined || open == ""){
-      
-    // }
+    wx.setStorageSync('aNums', 0)
     this.getOpenID();
     var allCard = ['card1',
       'card2',
