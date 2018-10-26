@@ -1,1 +1,1 @@
-<button class="s">帮他/她助力</button>
+<button class="s" bindtap="zhuli">帮他/她助力</button>
