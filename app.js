@@ -36,8 +36,8 @@ App({
               success: function (res) {
                 // var userName = wx.getStorageSync('userInfo');
                 var openId = wx.getStorageSync('openId');
-                console.log("openId");
-                console.log(openId);
+                // console.log("openId");
+                // console.log(openId);
                 wx.request({
                   url: 'https://www.yuebaoyuan.com.cn/wx/public/index.php/apii/initNum',
                   method: 'POST',
@@ -47,9 +47,9 @@ App({
                   success: function (data) {
                     // resolve(data.data);
                     if (data.data.state == 200) {
-                      console.log(data.data.mes);
+                      // console.log(data.data.mes);
                     }
-                    console.log(data.data);
+                    // console.log(data.data);
                   }
                 })
               }
@@ -86,7 +86,7 @@ App({
   },
   //非群发回调函数
   notMass:function(){
-    console.log(222);
+    // console.log(222);
     //弹框
     wx.showToast({
       title: '不是群发没有次数',
