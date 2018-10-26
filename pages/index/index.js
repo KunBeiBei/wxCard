@@ -182,7 +182,7 @@ Page({
       title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
       desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤！！',
       imageUrl: '/pages/images/zf.jpg',
-      path: 'pages/share/share?openid=' + wx.getStorageSync('openid')
+      path: 'pages/share/share?id=' + wx.getStorageSync('id')
     }
     app.success(app);
   },
