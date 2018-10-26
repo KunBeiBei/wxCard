@@ -30,32 +30,38 @@ App({
             'code': res.code
           },
           success: function (data) {
-            wx.setStorageSync('openId', data.data.openId);
-            var op = wx.getStorageSync('openId');
-            var jmOpenId = "";
-            for (var i = 0; i < op.length; i++) {
-              jmOpenId += String.fromCharCode(op[i].charCodeAt() - i);
-            }
-            wx.setStorageSync('openid', jmOpenId);
-            wx.login({
-              success: function (res) {
-                var openId = wx.getStorageSync('openId');
-                wx.request({
-                  url: 'https://www.yuebaoyuan.com.cn/wx/public/index.php/apii/initNum',
-                  method: 'POST',
-                  data: {
-                    'openId': openId
-                  },
-                  success: function (data) {
-                    // resolve(data.data);
-                    if (data.data.state == 200) {
-                      // console.log(data.data.mes);
+            if(data.data.state == 200){
+              wx.setStorageSync('openId', data.data.openId);
+              wx.setStorageSync('id', data.data.id);
+              wx.login({
+                success: function (res) {
+                  var openId = wx.getStorageSync('openId');
+                  console.log(openId);
+                  wx.request({
+                    url: 'https://www.yuebaoyuan.com.cn/wx/public/index.php/apii/initNum',
+                    method: 'POST',
+                    data: {
+                      'openId': openId
+                    },
+                    success: function (data) {
+                      if (data.data.state != 200) {
+                        wx.showToast({
+                          title: '系统异常，请退出重新进入',
+                          icon: 'none',
+                          duration: 3000
+                        });
+                      }
                     }
-                    // console.log(data.data);
-                  }
-                })
-              }
-            });
+                  })
+                }
+              });
+            }else{
+              wx.showToast({
+                title: '系统异常，请退出重新进入',
+                icon: 'none',
+                duration: 3000
+              });
+            }
           }
         })
       }
