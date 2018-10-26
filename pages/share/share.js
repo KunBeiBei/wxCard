@@ -2,8 +2,7 @@
 var app = getApp();
 Page({
   data: {
-    id: '',
-    code: 0
+    id: ''
   },
   onLoad: function (res) {
     if (Object.keys(res).length!=0){
@@ -19,10 +18,19 @@ Page({
       method: 'POST',
       data: {
         'id': this.data.id,
-        'openid': openid
+        'openId': openid
       },
       success: function (data) {
-
+        wx.showToast({
+          title: data.data.mes,
+          icon: 'none',
+          duration: 1000
+        }),
+        setTimeout(function(){
+          wx.redirectTo({
+            url: '../index/index'
+          })
+        },1500)
       }
     })
   }
