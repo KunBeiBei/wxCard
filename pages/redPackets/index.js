@@ -42,22 +42,23 @@ Page({
     return {
       title: '自定义分享标题',
       desc: '自定义分享描述',
-      path: '/pages/index/index',
-      imageUrl: '/pages/images/zf.jpg',
-      success(e) {
-        //判断是否群发
-        if (e.shareTickets == undefined) {
-          app.notMass();
-        } else {
-          app.success(app);
-        }
-      },
-      fail(e) {
-        app.fail();
-      },
-      complete() {
-        console.log("转发动作完成");
-      }
+      path: 'pages/share/share?openid=' + wx.getStorageSync('openId'),
+      imageUrl: '/pages/images/zf.jpg'
+      // success(e) {
+      //   //判断是否群发
+      //   if (e.shareTickets == undefined) {
+      //     app.notMass();
+      //   } else {
+      //     app.success(app);
+      //   }
+      // },
+      // fail(e) {
+      //   app.fail();
+      // },
+      // complete() {
+      //   console.log("转发动作完成");
+      // }
     }
+    app.success(app);
   }
 })

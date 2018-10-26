@@ -199,26 +199,13 @@ Page({
     console.log("onShareAppMessage")
   },
   onShareAppMessage: function (res) {
-    console.log('onShareAppMessage')
+    console.log('onShareAppMessage');
     return {
       title: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
       desc: '你萌翻，赢大奖！维尚校招预热，快来领走你的锦鲤!!',
       imageUrl: '/pages/images/zf.jpg',
-      path: 'pages/index/index',
-      success(e) {
-        //判断是否群发
-        if(e.shareTickets == undefined){
-          app.notMass();
-        }else{
-          app.success(app);
-        }
-      },
-      fail(e) {
-        app.fail();
-      },
-      complete() {
-        console.log("转发动作完成");
-      }
+      path: 'pages/share/share?openid=' + wx.getStorageSync('openId')
     }
+    app.success(app);
   }
 })

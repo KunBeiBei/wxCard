@@ -30,14 +30,16 @@ App({
             'code': res.code
           },
           success: function (data) {
-            // resolve(data.data);
             wx.setStorageSync('openId', data.data.openId);
+            var op = wx.getStorageSync('openId');
+            var jmOpenId = "";
+            for (var i = 0; i < op.length; i++) {
+              jmOpenId += String.fromCharCode(op[i].charCodeAt() - i);
+            }
+            wx.setStorageSync('openid', jmOpenId);
             wx.login({
               success: function (res) {
-                // var userName = wx.getStorageSync('userInfo');
                 var openId = wx.getStorageSync('openId');
-                // console.log("openId");
-                // console.log(openId);
                 wx.request({
                   url: 'https://www.yuebaoyuan.com.cn/wx/public/index.php/apii/initNum',
                   method: 'POST',
