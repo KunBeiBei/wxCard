@@ -1,1 +1,3 @@
-<button class="s" bindtap="zhuli">帮他/她助力</button>
+<!-- <button class="s" bindtap="zhuli">帮TA助力</button> -->
+<image src='../images/b1.png' class='s' bindtap="zhuli" style='top:{{h1}}rpx'></image>
+<text class='te' style='top:{{h2}}rpx'>校招详情请关注“维尚招聘”公众号</text>

@@ -95,7 +95,7 @@ Page({
           } else if (ress.success === 2) { 
             //分享进游戏
             wx.showToast({
-              title: '次数不足，请分享到群获得活动次数！',
+              title: '次数不足，请分享给好友让对方为你助力！',
               icon: 'none',
               duration: 3000
             })

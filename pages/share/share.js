@@ -2,12 +2,27 @@
 var app = getApp();
 Page({
   data: {
-    id: ''
+    id: '',
+    h1: 0,
+    h2: 0
   },
   onLoad: function (res) {
     if (Object.keys(res).length!=0){
       this.setData({
         id: res.id
+      })
+    }
+    //适配高度
+    var h = wx.getSystemInfoSync().screenHeight
+    if(h>=812){
+      this.setData({
+        h1: 500,
+        h2: 620
+      })
+    }else{
+      this.setData({
+        h1: 410,
+        h2: 520
       })
     }
   },

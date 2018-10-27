@@ -8,19 +8,21 @@ page{
   -moz-background-size:100% 100%;
 }
 .s{
-  width: 400rpx;
-  height: 120rpx;
+  width: 360rpx;
+  height: 90rpx;
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 400rpx;
   margin:auto;
-  border-radius: 10rpx;
-  background-color: #bd264f;
-  text-align: center;
-  line-height: 120rpx;
-  font-size: 40rpx;
+  border-radius: 55rpx;
+  border: 2px solid #7f7f7f;
+}
+.te{
+  position: absolute;
+  top: 520rpx;
   color: #fff;
-  font-weight: bold;
+  font-size: 28rpx;
+  text-align: center;
+  width: 100%;
 }
