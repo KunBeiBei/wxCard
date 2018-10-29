@@ -60,6 +60,13 @@ App({
             }else{
               that.aaa();
             }
+          },
+          fail: function(){
+            wx.showToast({
+              title: '网络错误，请退出重新登录',
+              icon: 'none',
+              duration: 3000
+            });
           }
         })
       }
