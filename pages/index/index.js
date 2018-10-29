@@ -18,6 +18,7 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
+    app.getOpenID();
     wx.showShareMenu({
       withShareTicket: true
     });

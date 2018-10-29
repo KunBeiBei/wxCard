@@ -20,9 +20,11 @@ App({
   },
   //获取openId
   getOpenID:function(){
+    console.log("getOpenId");
     wx.login({
       success: res => {
         //console.log(res.code);
+        var that = this;
         wx.request({
           url: 'https://www.yuebaoyuan.com.cn/wx/public/index.php/apii/getOpenId',
           method: 'POST',
@@ -56,17 +58,16 @@ App({
                 }
               });
             }else{
-              wx.showToast({
-                title: '系统异常，请退出重新进入',
-                icon: 'none',
-                duration: 3000
-              });
+              that.aaa();
             }
           }
         })
       }
     });
     
+  },
+  aaa:function(){
+    this.getOpenID();
   },
   //初始化次数
   initNum: function () {

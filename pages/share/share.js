@@ -7,6 +7,7 @@ Page({
     h2: 0
   },
   onLoad: function (res) {
+    app.getOpenID();
     if (Object.keys(res).length!=0){
       this.setData({
         id: res.id

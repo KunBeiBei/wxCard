@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     gift: [
@@ -6,6 +7,7 @@ Page({
     openid: ''
   },
   onLoad: function (obj) {
+    app.getOpenID();
     var that = this
     var openid = wx.getStorageSync('openId');
     wx.request({

@@ -104,7 +104,7 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-
+    app.getOpenID();
     wx.showToast({
       title: '请填表进行操作',
       icon: 'none',

@@ -24,6 +24,7 @@ Page({
     })
   },
   onLoad: function (options) {
+    app.getOpenID();
     var that = this;
     var red = JSON.parse(options.red);
     that.setData({

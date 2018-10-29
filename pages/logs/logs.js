@@ -13,6 +13,7 @@ Page({
 
   },
   onLoad: function () {
+    app.getOpenID();
     wx.showShareMenu({
       withShareTicket: true
     });

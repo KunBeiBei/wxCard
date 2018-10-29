@@ -165,6 +165,7 @@ Page({
   }
   , "disableScroll": true,
   onLoad: function () {
+    app.getOpenID();
     wx.showShareMenu({
       withShareTicket: true
     })
